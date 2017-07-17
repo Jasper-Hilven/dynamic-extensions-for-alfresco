@@ -43,8 +43,10 @@ public abstract class AbstractModelRegistrar(val modelsToRegister: M2ModelListPr
         return item.m2Model.namespaces.map { it.uri }
     }
 
-    override val allowCircularReferences: Boolean
-        get() = false
+    override fun allowCircularReferences(): Boolean{
+        return false
+    }
+
 
     protected abstract fun registerModel(modelResource: M2ModelResource)
 
