@@ -27,8 +27,13 @@ public abstract class AbstractModelRegistrar implements ModelRegistrar, Resource
     public AbstractModelRegistrar(M2ModelListProvider modelsToRegister){
         this.modelsToRegister = modelsToRegister;
     }
-
     @Autowired
+    public void setModelsToRegister(M2ModelListProvider modelsToRegister){
+        this.modelsToRegister = modelsToRegister;
+    }
+
+
+
     public M2ModelListProvider modelsToRegister;
 
     private void setResourcePatternResolver(ResourcePatternResolver resourcePatternResolver) {
